@@ -93,8 +93,7 @@ NSDictionary* infoDict =[[NSBundle mainBundle] infoDictionary];
         }
     }
         
-        //[self makeCall:phoneNumber videoCall:isVideo];
-        
+      
     return YES;
     
 }

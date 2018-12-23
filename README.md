@@ -1,9 +1,8 @@
 # UserActivity-iOS
 How to use ?
 
-
-
-//1. Provider
+## 1. Provider
+```Objective-c
 /*========== CXProviderConfiguration ===============*/
 /* will support => [NSNumber numberWithInteger:CXHandleTypeGeneric]*/
 NSDictionary* infoDict =[[NSBundle mainBundle] infoDictionary];
@@ -13,10 +12,10 @@ NSDictionary* infoDict =[[NSBundle mainBundle] infoDictionary];
     configuration.maximumCallsPerCallGroup = 1;
     configuration.supportedHandleTypes = [NSSet setWithObjects:[NSNumber numberWithInteger:CXHandleTypeGeneric], [NSNumber numberWithInteger:CXHandleTypePhoneNumber], nil];
 /*=========================*/
+```
 
-
+## 2. Info.Plist
 /*============ Info Key =============*/
-//2. Info.Plist
   <key>NSUserActivityTypes</key>
 	<array>
 		<string>INStartAudioCallIntent</string>
@@ -25,7 +24,7 @@ NSDictionary* infoDict =[[NSBundle mainBundle] infoDictionary];
 /*=========================*/
 
 
-//3.AppDelegate
+## 3.AppDelegate
 /*==========================*/
 //AppDelegate.h
 

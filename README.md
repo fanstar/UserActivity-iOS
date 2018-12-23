@@ -2,32 +2,30 @@
 How to use ?
 
 ## 1. Provider
-```Objective-c
-/*========== CXProviderConfiguration ===============*/
-/* will support => [NSNumber numberWithInteger:CXHandleTypeGeneric]*/
+CXProviderConfiguration
+Will support => [NSNumber numberWithInteger:CXHandleTypeGeneric]
+```Objective-C
 NSDictionary* infoDict =[[NSBundle mainBundle] infoDictionary];
     NSString *localizedName = [infoDict objectForKey:@"CFBundleName"];//APP Name
     CXProviderConfiguration *configuration = [[CXProviderConfiguration alloc] initWithLocalizedName:localizedName];
     configuration.supportsVideo = YES;
     configuration.maximumCallsPerCallGroup = 1;
     configuration.supportedHandleTypes = [NSSet setWithObjects:[NSNumber numberWithInteger:CXHandleTypeGeneric], [NSNumber numberWithInteger:CXHandleTypePhoneNumber], nil];
-/*=========================*/
 ```
 
 ## 2. Info.Plist
-/*============ Info Key =============*/
-  <key>NSUserActivityTypes</key>
-	<array>
-		<string>INStartAudioCallIntent</string>
-		<string>INStartVideoCallIntent</string>
-	</array>
-/*=========================*/
-
+Info.plist
+```Objective-C
+<key>NSUserActivityTypes</key>
+<array>
+	<string>INStartAudioCallIntent</string>
+	<string>INStartVideoCallIntent</string>
+</array>
+```
 
 ## 3.AppDelegate
-/*==========================*/
-//AppDelegate.h
-
+AppDelegate.h
+```Objective-C
 -(BOOL)application:(UIApplication *)application willContinueUserActivityWithType:(NSString *)userActivityType{
     return YES;
 }
@@ -97,4 +95,4 @@ NSDictionary* infoDict =[[NSBundle mainBundle] infoDictionary];
     
 }
 
-/*==========================*/
+```
